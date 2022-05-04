@@ -1,4 +1,4 @@
-@Library('roboshop') _
+@Library('avk') _
 avk(
     
      COMPONENT      :  'shipping',
