@@ -2,7 +2,7 @@ FROM      maven:3-openjdk-8
 RUN       mkdir /app/src
 WORKDIR   /app/src
 COPY      src .
-COPY      pom.xml
+COPY      pom.xml  .
 RUN       mvn package
 
 FROM      openjdk:8-jre-slim
