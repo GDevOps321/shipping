@@ -4,4 +4,7 @@ WORKDIR /app
 COPY    src src
 COPY    pom.xml .
 RUN     mvn package
-CMD     ["java", "-jar","target/shipping-1-0.jar"]
+
+FROM    openjdk:8-jre-slim
+COPY    --from=BUILD /app/target/shipping-1.0.jar shipping.jar
+CMD     ["java", "-jar","shipping.jar"]
