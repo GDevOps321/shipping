@@ -6,5 +6,5 @@ COPY    pom.xml .
 RUN     mvn package
 
 FROM    openjdk:8-jre-slim
-COPY    --from=build /app/target/shipping-1.0.jar shipping.jar
+COPY    --from=BUILD /app/target/shipping-1.0.jar shipping.jar
 CMD     ["java", "-jar","shipping.jar"]
